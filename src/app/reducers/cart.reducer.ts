@@ -5,7 +5,7 @@ import { ProductModel } from '../models/product.model';
 
 export const cart: CartModel = new CartModel();
 
-export function cartReducer(
+export function CartReducer(
     state = cart,
     action: ActionModel
 ) {
