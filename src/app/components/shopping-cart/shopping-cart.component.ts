@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AlertController } from '@ionic/angular';
 
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Remove, Clear } from './../../actions/cart.action';
 import { CartModel } from './../../models/cart.model';
 import { ProductModel } from './../../models/product.model';
@@ -18,7 +18,9 @@ export class ShoppingCartComponent implements OnInit {
   cart$: Observable<CartModel>;
 
   constructor(private store: Store<CartModel>,
-              private alertCtrl: AlertController) { }
+              private alertCtrl: AlertController) {
+    this.cart$ = store.pipe(select('cart'));
+  }
 
   ngOnInit() { }
 
@@ -26,7 +28,8 @@ export class ShoppingCartComponent implements OnInit {
     this.store.dispatch(Remove(product));
   }
 
-  clear() {
+  reset() {
+    console.log(this.cart$);
     this.store.dispatch(Clear());
   }
 
