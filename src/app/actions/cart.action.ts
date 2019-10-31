@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store'
+import { Action } from '@ngrx/store';
 
 export enum ActionTypes {
     Add = 'ADD',
@@ -7,13 +7,13 @@ export enum ActionTypes {
 }
 
 export const Add = (product: any) => {
-    return <Action>{ type: ActionTypes.Add, payload: product };
-}
+    return { type: ActionTypes.Add, payload: product } as Action;
+};
 
 export const Remove = (product: any) => {
-    return <Action>{ type: ActionTypes.Remove, payload: product };
-}
+    return { type: ActionTypes.Remove, payload: product } as Action;
+};
 
 export const Clear = () => {
-    return <Action>{ type: ActionTypes.Clear, payload: null };
-}
+    return { type: ActionTypes.Clear, payload: null } as Action;
+};

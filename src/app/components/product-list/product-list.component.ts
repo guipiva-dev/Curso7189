@@ -31,6 +31,7 @@ export class ProductListComponent implements OnInit {
         this.products = res;
       },
       (err) => {
+        console.log('err');
         console.log(err);
       }
     );
@@ -45,7 +46,7 @@ export class ProductListComponent implements OnInit {
       showCloseButton: true,
       closeButtonText: 'OK'});
 
-      await toastr.present();
+    await toastr.present();
   }
 
 }

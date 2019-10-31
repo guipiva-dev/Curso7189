@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private store: Store<CartModel>
-  ) { 
+  ) {
     this.cart$ = this.store.pipe(select('cart'));
   }
 

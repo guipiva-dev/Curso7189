@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,
-    IonicModule 
+    IonicModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    ProductListComponent
   ]
 })
 export class ComponentsModule { }
